@@ -57,10 +57,12 @@ public class Controle {
         //Config da View de Inserir e o BD
         ManipuladorInsertButton mI =new ManipuladorInsertButton();
         viewPrincipal.buttonInsert(mI);
-        
+     
+        janelaView = new ControleVooJFrame();
         gerenciadorDB=new PassageiroDAO();
         ManipuladorInsere m=new ManipuladorInsere();
         janelaView.adicionaManipuladorEventosInsere(m);
+        
         
         //Config da View de Buscar
         ManipuladorSearchButton mS =new ManipuladorSearchButton();
