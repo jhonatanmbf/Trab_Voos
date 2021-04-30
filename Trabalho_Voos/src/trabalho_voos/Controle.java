@@ -15,6 +15,8 @@ public class Controle {
     
     private ControleVooJFrame janelaView = null;
     private PassageiroDAO gerenciadorDB = null;
+    private ControleVooPrincipal viewPrincipal=null;
+    private ControleVooBuscar viewBuscar = null;
     
     public class ManipuladorInsere implements ActionListener{
 
@@ -24,22 +26,45 @@ public class Controle {
            Passageiro p = janelaView.obtemObjetoPassageiro();
     
            gerenciadorDB.insereBanco(p);
-           
-           
-           //gerenciadorDB.insereBanco(p);
-          
-           
-        }
+        }   
+    }
+    
+    public class ManipuladorInsertButton implements ActionListener{
         
+        @Override
+        public void actionPerformed(ActionEvent ae){
+            janelaView = new ControleVooJFrame();
+            janelaView.setVisible(true);
+        }
+    }
+    
+    public class ManipuladorSearchButton implements ActionListener{
+        
+        @Override
+        public void actionPerformed(ActionEvent ae){
+            viewBuscar = new ControleVooBuscar();
+            viewBuscar.setVisible(true);
+        }
     }
     
     public void executar(){
-    janelaView = new ControleVooJFrame();
-    gerenciadorDB=new PassageiroDAO();
-    ManipuladorInsere m=new ManipuladorInsere();
-    janelaView.adicionaManipuladorEventosInsere(m);
-    janelaView.setVisible(true);
-    
+               
+        //Config da viewPrincipal
+        viewPrincipal = new ControleVooPrincipal();
+        viewPrincipal.setVisible(true);
+        viewPrincipal.setLocationRelativeTo(null);
+        
+        //Config da View de Inserir e o BD
+        ManipuladorInsertButton mI =new ManipuladorInsertButton();
+        viewPrincipal.buttonInsert(mI);
+        
+        gerenciadorDB=new PassageiroDAO();
+        ManipuladorInsere m=new ManipuladorInsere();
+        janelaView.adicionaManipuladorEventosInsere(m);
+        
+        //Config da View de Buscar
+        ManipuladorSearchButton mS =new ManipuladorSearchButton();
+        viewPrincipal.buttonSearch(mS);
     }
     
     

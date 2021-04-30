@@ -54,7 +54,5 @@ public class PassageiroDAO {
         } catch (SQLException e) {
             System.out.println("Problema na INSERÇÃO");
         }
-    
-    
-}
+    }
 }

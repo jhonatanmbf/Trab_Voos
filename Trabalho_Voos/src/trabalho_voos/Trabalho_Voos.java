@@ -16,7 +16,7 @@ public class Trabalho_Voos {
      */
     public static void main(String[] args) {
        
-         Controle c=new Controle();
+        Controle c=new Controle();
         c.executar();
         
     }

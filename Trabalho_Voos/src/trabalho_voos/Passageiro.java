@@ -12,22 +12,22 @@ package trabalho_voos;
 public class Passageiro {
     
     private String nomePassageiro;
-private int cpfPassageiro;
-private String codigoVoo;
-private Double precoPassagem;
-private String codigoCompanhia;
-private String nomeCompanhia;
-private String mesAnoVoo;
+    private int cpfPassageiro;
+    private String codigoVoo;
+    private Double precoPassagem;
+    private String codigoCompanhia;
+    private String nomeCompanhia;
+    private String mesAnoVoo;
     public Passageiro(String nome,int cpf,String codigovoo,
-            Double preco,String codigocompanhia,String nomecompanhia,String mesanovoo){
+        Double preco,String codigocompanhia,String nomecompanhia,String mesanovoo){
         
-nomePassageiro=nome;
-cpfPassageiro=cpf;
-codigoVoo=codigovoo;
-precoPassagem=preco;
-codigoCompanhia=codigocompanhia;
-nomeCompanhia=nomecompanhia;
-mesAnoVoo=mesanovoo;
+        nomePassageiro=nome;
+        cpfPassageiro=cpf;
+        codigoVoo=codigovoo;
+        precoPassagem=preco;
+        codigoCompanhia=codigocompanhia;
+        nomeCompanhia=nomecompanhia;
+        mesAnoVoo=mesanovoo;
         
     }
 
