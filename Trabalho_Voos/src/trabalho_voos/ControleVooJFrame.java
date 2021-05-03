@@ -153,6 +153,11 @@ public class ControleVooJFrame extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     
+    public void executar(){
+        setVisible(true);
+    }
+    
+    
     public Passageiro obtemObjetoPassageiro(){
         String nome=jTextFieldnome.getText();
         int cpf=Integer.parseInt(jTextFieldcpf.getText());
@@ -180,7 +185,6 @@ public class ControleVooJFrame extends javax.swing.JFrame {
     
     public void adicionaManipuladorEventosInsere(ActionListener manipulador){
         jButtonsalvar.addActionListener(manipulador);
-
     }
 
 

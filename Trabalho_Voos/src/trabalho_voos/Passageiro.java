@@ -18,6 +18,7 @@ public class Passageiro {
     private String codigoCompanhia;
     private String nomeCompanhia;
     private String mesAnoVoo;
+    
     public Passageiro(String nome,int cpf,String codigovoo,
         Double preco,String codigocompanhia,String nomecompanhia,String mesanovoo){
         

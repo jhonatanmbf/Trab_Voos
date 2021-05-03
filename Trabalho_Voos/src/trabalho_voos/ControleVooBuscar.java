@@ -204,5 +204,7 @@ public class ControleVooBuscar extends javax.swing.JFrame {
     private javax.swing.JTextField txtPreco;
     // End of variables declaration//GEN-END:variables
 
-    
+   public void executarBuscarVoo(){
+        setVisible(true);
+   } 
 }

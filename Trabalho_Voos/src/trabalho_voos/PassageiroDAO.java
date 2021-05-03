@@ -24,14 +24,12 @@ public class PassageiroDAO {
         try {
             //ALTERAR DADOS PARA CONEXAO COM BANCO     
             String user="system";
-            String password="userdb";
+            String password="admin";
           
-            String url="jdbc:oracle:thin:@localhost:1521:XE";
-            conexaoBD = DriverManager.getConnection(url,user,password);
-          
-           
+            String url="jdbc:oracle:thin:@localhost:1521:db_compVoo";
+            conexaoBD = DriverManager.getConnection(url,user,password);  
         } catch (SQLException e) {
-            System.out.println("Problema na conexão");
+            System.out.println("Problema na conexão"+e);
         }
     
     }

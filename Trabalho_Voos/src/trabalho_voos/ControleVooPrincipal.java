@@ -97,6 +97,11 @@ public class ControleVooPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 
+    public void executarPrincipal(){
+        setVisible(true);
+        setLocationRelativeTo(null);
+    }
+    
     public void buttonInsert(ActionListener insert){
         btnInsert.addActionListener(insert);
     }

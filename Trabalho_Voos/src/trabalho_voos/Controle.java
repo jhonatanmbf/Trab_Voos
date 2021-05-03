@@ -18,32 +18,35 @@ public class Controle {
     private ControleVooPrincipal viewPrincipal=null;
     private ControleVooBuscar viewBuscar = null;
     
-    public class ManipuladorInsere implements ActionListener{
 
-        @Override
-        public void actionPerformed(ActionEvent ae) {
-          
-           Passageiro p = janelaView.obtemObjetoPassageiro();
-    
-           gerenciadorDB.insereBanco(p);
-        }   
-    }
     
     public class ManipuladorInsertButton implements ActionListener{
         
         @Override
-        public void actionPerformed(ActionEvent ae){
+        public void actionPerformed(ActionEvent e){
             janelaView = new ControleVooJFrame();
-            janelaView.setVisible(true);
+            janelaView.executar();
         }
+    }
+    
+    public class ManipuladorInsere implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+          
+           Passageiro p = janelaView.obtemObjetoPassageiro();
+    
+           gerenciadorDB.insereBanco(p);
+           System.out.println("Inserido no banco de dados");
+        }   
     }
     
     public class ManipuladorSearchButton implements ActionListener{
         
         @Override
-        public void actionPerformed(ActionEvent ae){
+        public void actionPerformed(ActionEvent ee){
             viewBuscar = new ControleVooBuscar();
-            viewBuscar.setVisible(true);
+            viewBuscar.executarBuscarVoo();
         }
     }
     
@@ -51,8 +54,7 @@ public class Controle {
                
         //Config da viewPrincipal
         viewPrincipal = new ControleVooPrincipal();
-        viewPrincipal.setVisible(true);
-        viewPrincipal.setLocationRelativeTo(null);
+        viewPrincipal.executarPrincipal();
         
         //Config da View de Inserir e o BD
         ManipuladorInsertButton mI =new ManipuladorInsertButton();
