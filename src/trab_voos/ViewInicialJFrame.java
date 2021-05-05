@@ -50,6 +50,9 @@ public class ViewInicialJFrame extends javax.swing.JFrame {
         jButtonInserir.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jButtonInserir.setText("Inserir Passageiro");
         jButtonInserir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonInserir.setMaximumSize(new java.awt.Dimension(160, 35));
+        jButtonInserir.setMinimumSize(new java.awt.Dimension(160, 35));
+        jButtonInserir.setPreferredSize(new java.awt.Dimension(16, 35));
 
         jButtonBuscar.setBackground(new java.awt.Color(0, 204, 204));
         jButtonBuscar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -74,13 +77,13 @@ public class ViewInicialJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButtonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonLucro, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButtonBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonLucro, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonInserir, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(188, 188, 188))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addGap(223, 223, 223))))
+                        .addGap(246, 246, 246))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,7 +93,7 @@ public class ViewInicialJFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                .addComponent(jButtonInserir)
+                .addComponent(jButtonInserir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButtonBuscar)
                 .addGap(18, 18, 18)
@@ -128,14 +131,19 @@ public class ViewInicialJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
-public void abrirInserir(ActionListener manipulador){
-jButtonInserir.addActionListener(manipulador);
-}
-public void abrirBuscar(ActionListener manipulador){
-jButtonBuscar.addActionListener(manipulador);
-}
-public void abrirLucro(ActionListener manipulador){
-jButtonLucro.addActionListener(manipulador);
-}
+    public void executarPrincipal(){
+        setVisible(true);
+        setLocationRelativeTo(null);
+    }
+    
+    public void abrirInserir(ActionListener manipulador){
+        jButtonInserir.addActionListener(manipulador);
+    }
+    public void abrirBuscar(ActionListener manipulador){
+        jButtonBuscar.addActionListener(manipulador);
+    }
+    public void abrirLucro(ActionListener manipulador){
+        jButtonLucro.addActionListener(manipulador);
+    }
 
 }
