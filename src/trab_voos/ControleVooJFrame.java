@@ -176,6 +176,7 @@ public class ControleVooJFrame extends javax.swing.JFrame {
     
     public void executarViewInsere(){
         setVisible(true);
+        setLocationRelativeTo(null);
     }
     
     
