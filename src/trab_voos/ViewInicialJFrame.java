@@ -139,9 +139,11 @@ public class ViewInicialJFrame extends javax.swing.JFrame {
     public void abrirInserir(ActionListener manipulador){
         jButtonInserir.addActionListener(manipulador);
     }
+    
     public void abrirBuscar(ActionListener manipulador){
         jButtonBuscar.addActionListener(manipulador);
     }
+    
     public void abrirLucro(ActionListener manipulador){
         jButtonLucro.addActionListener(manipulador);
     }
