@@ -45,8 +45,10 @@ public class ControleVooJFrame extends javax.swing.JFrame {
         jTextFielddata = new javax.swing.JTextField();
         jButtonsalvar = new javax.swing.JButton();
         jLabelConfirma = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Registro");
+        setResizable(false);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Nome:");
@@ -70,6 +72,10 @@ public class ControleVooJFrame extends javax.swing.JFrame {
         jLabel7.setText("Data Mês/Ano");
 
         jButtonsalvar.setText("Salvar");
+        jButtonsalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel8.setText("Registro de Clientes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,10 +84,7 @@ public class ControleVooJFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonsalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
-                        .addComponent(jLabelConfirma, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelConfirma, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -90,22 +93,28 @@ public class ControleVooJFrame extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(48, 48, 48)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldcpf, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(jTextFieldcodvoo, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(jTextFieldpreco, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(jTextFieldcodcompanhia, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(jTextFieldnomecompanhia, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(jTextFielddata, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                            .addComponent(jTextFieldnome))))
-                .addGap(47, 47, 47))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextFieldcpf)
+                                .addComponent(jTextFieldcodvoo)
+                                .addComponent(jTextFieldpreco)
+                                .addComponent(jTextFieldcodcompanhia)
+                                .addComponent(jTextFieldnomecompanhia)
+                                .addComponent(jTextFielddata)
+                                .addComponent(jTextFieldnome, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonsalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(34, 34, 34)
+                .addComponent(jLabel8)
+                .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTextFieldnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -133,11 +142,11 @@ public class ControleVooJFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jTextFielddata, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonsalvar)
-                    .addComponent(jLabelConfirma))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelConfirma, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonsalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -153,6 +162,7 @@ public class ControleVooJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelConfirma;
     private javax.swing.JTextField jTextFieldcodcompanhia;
     private javax.swing.JTextField jTextFieldcodvoo;
@@ -164,23 +174,28 @@ public class ControleVooJFrame extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     
+    public void executarViewInsere(){
+        setVisible(true);
+    }
+    
+    
     public Passageiro obtemObjetoPassageiro(){
-    String nome=jTextFieldnome.getText();
-    Double cpf=Double.parseDouble(jTextFieldcpf.getText());
-    String codigovoo=jTextFieldcodvoo.getText();
-    Double preco=Double.parseDouble(jTextFieldpreco.getText());
-    String codigocompanhia=jTextFieldcodcompanhia.getText();
-    String nomecompanhia=jTextFieldnomecompanhia.getText();
-    String mesanovoo=jTextFielddata.getText();
-    Passageiro p = new Passageiro(nome,cpf,codigovoo,preco,codigocompanhia,nomecompanhia,mesanovoo);
+        String nome=jTextFieldnome.getText();
+        Double cpf=Double.parseDouble(jTextFieldcpf.getText());
+        String codigovoo=jTextFieldcodvoo.getText();
+        Double preco=Double.parseDouble(jTextFieldpreco.getText());
+        String codigocompanhia=jTextFieldcodcompanhia.getText();
+        String nomecompanhia=jTextFieldnomecompanhia.getText();
+        String mesanovoo=jTextFielddata.getText();
+        Passageiro p = new Passageiro(nome,cpf,codigovoo,preco,codigocompanhia,nomecompanhia,mesanovoo);
    
-    return p;}
+        return p;
+    }
   
     
-public void adicionaManipuladorEventosInsere(ActionListener manipulador){
-jButtonsalvar.addActionListener(manipulador);
-
-}
+    public void adicionaManipuladorEventosInsere(ActionListener manipulador){
+        jButtonsalvar.addActionListener(manipulador);
+    }
 
 
 
