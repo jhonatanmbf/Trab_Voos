@@ -9,6 +9,7 @@ import trab_voos.Controle.Manipuladorlistar;
 
 
 public class Controle {
+    private BuscaLucroJFrame janelalucro=null;
     private ViewInicialJFrame janelaInicial=null;
     private BuscarPVooJFrame janelaViewBuscar=null;
     private ControleVooJFrame janelaView = null;
@@ -44,12 +45,37 @@ public class Controle {
           
             
     }
+    
+    public class MostraLucro implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            ArrayList<BuscaLucro> lista = new ArrayList<BuscaLucro>();
+                gerenciadorDB.lucroBanco(lista);
+                Iterator<BuscaLucro> it=lista.iterator();
+                while(it.hasNext()){
+                BuscaLucro bl = (BuscaLucro) it.next();
+                janelalucro.inserirlista(bl);
+        
+        
+        }
+    }
+        
+    }
     public class ManipuladorLimpar implements ActionListener{
              @Override
                 public void actionPerformed(ActionEvent ae) {
            
                  janelaViewBuscar.acionaLimpar();}            
     }
+    
+     public class ManipuladorlLimpar implements ActionListener{
+             @Override
+                public void actionPerformed(ActionEvent ae) {
+           
+                 janelalucro.acionaLimpar();} 
+     }
+    
     public class abirInserir implements ActionListener{
 
         @Override
@@ -71,13 +97,15 @@ public class Controle {
 
         @Override
         public void actionPerformed(ActionEvent ae) {
+            janelalucro.setVisible(true);
               }
     }
     
     
     
     public void executar(){
-    janelaInicial=new ViewInicialJFrame();    
+    janelaInicial=new ViewInicialJFrame();  
+    janelalucro= new BuscaLucroJFrame();
     janelaViewBuscar= new BuscarPVooJFrame();
     janelaView = new ControleVooJFrame();
     gerenciadorDB=new PassageiroDAO();
@@ -92,6 +120,14 @@ public class Controle {
     ManipuladorLimpar limp=new ManipuladorLimpar();
     janelaViewBuscar.Limpar(limp);
     
+    
+     ManipuladorlLimpar llp=new ManipuladorlLimpar();
+    janelalucro.Limpar(llp);
+    
+    //--------------Lucro-------------------------------------
+    MostraLucro mlucro=new MostraLucro();
+    janelalucro.buttonBuscar(mlucro);
+    
     //----------Abrir view Insere-----------------------------
     abirInserir abrir=new abirInserir();
     janelaInicial.abrirInserir(abrir);
@@ -100,7 +136,7 @@ public class Controle {
     janelaInicial.abrirBuscar(buscar);
     //----------Abrir view Lucro-----------------------------
     abrirLucro lucro=new abrirLucro();
-    janelaInicial.abrirBuscar(lucro);
+    janelaInicial.abrirLucro(lucro);
     //--------------------------------------------------------
    janelaInicial.setVisible(true);
     
@@ -110,4 +146,4 @@ public class Controle {
    
     
     
-}
+    }

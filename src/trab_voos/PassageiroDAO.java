@@ -18,6 +18,9 @@ import java.sql.*;
  * @author Douglas Verly
  */
 public class PassageiroDAO {
+    
+    
+    private BuscaLucroJFrame janelalucro=null;
     private ControleVooJFrame janelaView = null;
     private Connection conexaoBD;
     
@@ -77,6 +80,34 @@ public class PassageiroDAO {
        }
    }
     
+   
+   public void lucroBanco(ArrayList<BuscaLucro> lista){
+   try {
+           String sql="SELECT NOME_COMPANHIA,LUCRO,DATAVOO FROM TB_LUCRO";
+           Statement comando=conexaoBD.createStatement();
+           ResultSet resultado=comando.executeQuery(sql);
+           while (resultado.next()){
+            String nome=resultado.getString(1);
+            String lucro=resultado.getString(2);
+            String datavoo=resultado.getString(3);
+            
+            BuscaLucro bl = new BuscaLucro(nome,datavoo,lucro);
+            lista.add(bl);
+           }      
+       } catch (Exception e) {
+           System.out.println("Erro na BuscaLucro"+e);
+       }
+   
+   
+   }
+   public void callproc(){
+       try {Statement comando=conexaoBD.createStatement();
+       String SQL="CALL CAL_LUCRO();";
+       comando.executeUpdate(SQL);
+       System.out.println("Procedure Executada!!");  
+       } catch (Exception e) {System.out.println("Erro na Execução"+e);
+       }
+}
 }
 
   
