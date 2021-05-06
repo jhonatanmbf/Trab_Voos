@@ -86,7 +86,7 @@ public class Controle {
 
         @Override
         public void actionPerformed(ActionEvent ae) {
-            janelaViewBuscar.executarViewBusca();
+            janelaViewBuscar.executarViewBuscar();
         }
     }
     
@@ -120,6 +120,9 @@ public class Controle {
 
          ManipuladorlLimpar llp=new ManipuladorlLimpar();
         janelalucro.Limpar(llp);
+        
+        
+        
 
         //--------------Lucro-------------------------------------
         MostraLucro mlucro=new MostraLucro();

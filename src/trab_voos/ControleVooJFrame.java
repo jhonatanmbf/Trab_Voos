@@ -57,22 +57,22 @@ public class ControleVooJFrame extends javax.swing.JFrame {
         jLabel2.setText("CPF:");
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Cod.Voo");
+        jLabel3.setText("Cod.Voo:");
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Preço:");
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Cod.Companhia");
+        jLabel5.setText("Cod.Companhia:");
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Nome Companhia");
+        jLabel6.setText("Nome Companhia:");
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Data Mês/Ano");
+        jLabel7.setText("Data d/m/ano");
 
         jButtonsalvar.setText("Salvar");
-        jButtonsalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonsalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel8.setText("Registro de Clientes");

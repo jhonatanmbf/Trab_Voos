@@ -28,7 +28,7 @@ public class PassageiroDAO {
         try {
             //ALTERAR DADOS PARA CONEXAO COM BANCO     
             String user="system";
-            String password="admin";
+            String password="userdb";
           
             String url="jdbc:oracle:thin:@localhost:1521:xe";
             conexaoBD = DriverManager.getConnection(url,user,password);
@@ -49,8 +49,8 @@ public class PassageiroDAO {
                     +p.getCodigoVoo()+"',"
                     +p.getPrecoPassagem()+",'"
                     +p.getCodigoCompanhia()+"','"
-                    +p.getNomeCompanhia()+"','"
-                    +p.getMesAnoVoo()+"')";
+                    +p.getNomeCompanhia()+"',TO_DATE('"
+                    +p.getMesAnoVoo()+"','DD/MM/YYYY'))";
             
             Statement comando = conexaoBD.createStatement();
             comando.executeUpdate(sql);
