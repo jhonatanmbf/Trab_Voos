@@ -66,7 +66,7 @@ public class PassageiroDAO {
     
    public void buscarBanco(ArrayList<BuscarP> lista){
        try {
-           String sql="SELECT NOME,CODCOMPANHIA FROM PASSAGEIRO";
+           String sql="SELECT NOME,CODCOMPANHIA FROM PASSAGEIRO order by nome";
            Statement comando=conexaoBD.createStatement();
            ResultSet resultado=comando.executeQuery(sql);
            while (resultado.next()){
@@ -100,14 +100,7 @@ public class PassageiroDAO {
    
    
    }
-   public void callproc(){
-       try {Statement comando=conexaoBD.createStatement();
-       String SQL="CALL CAL_LUCRO();";
-       comando.executeUpdate(SQL);
-       System.out.println("Procedure Executada!!");  
-       } catch (Exception e) {System.out.println("Erro na Execução"+e);
-       }
-}
+   
 }
 
   

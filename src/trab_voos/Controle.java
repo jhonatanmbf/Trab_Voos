@@ -51,6 +51,7 @@ public class Controle {
         @Override
         public void actionPerformed(ActionEvent ae) {
             ArrayList<BuscaLucro> lista = new ArrayList<BuscaLucro>();
+               
                 gerenciadorDB.lucroBanco(lista);
                 Iterator<BuscaLucro> it=lista.iterator();
                 while(it.hasNext()){
