@@ -16,7 +16,7 @@ public class BuscaLucroJFrame extends javax.swing.JFrame {
     public BuscaLucroJFrame() {
         initComponents();
     }
- private DefaultListModel<BuscaLucro> listaModelo=new DefaultListModel<BuscaLucro>();
+    private DefaultListModel<BuscaLucro> listaModelo=new DefaultListModel<BuscaLucro>();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,51 +32,54 @@ public class BuscaLucroJFrame extends javax.swing.JFrame {
         jListLucro = new javax.swing.JList<BuscaLucro>();
         jButtonLimpar = new javax.swing.JButton();
 
-        setTitle("Janela do Lucro");
+        setTitle("Janela de Lucro");
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Lucro Mensal");
 
+        btnBuscar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnBuscar.setText("Buscar");
-        btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jListLucro.setModel(listaModelo);
         jScrollPane1.setViewportView(jListLucro);
 
+        jButtonLimpar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jButtonLimpar.setText("Limpar");
+        jButtonLimpar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(185, 185, 185)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(26, 26, 26)
-                                .addComponent(jButtonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(223, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(212, 212, 212))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(2, 2, 2)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscar)
                     .addComponent(jButtonLimpar))
-                .addGap(44, 44, 44))
+                .addGap(27, 27, 27))
         );
 
         pack();
@@ -99,18 +102,19 @@ public class BuscaLucroJFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
     
-   public void inserirlista(BuscaLucro bl){
-    listaModelo.addElement(bl);
-   
-}
+    public void inserirlista(BuscaLucro bl){
+        listaModelo.addElement(bl);
+    }
     
     public void buttonBuscar(ActionListener buscar){
         btnBuscar.addActionListener(buscar);
     }
+    
     public void acionaLimpar(){
-listaModelo.clear();}
+        listaModelo.clear();
+    }
 
-public void Limpar(ActionListener manipulador){
-jButtonLimpar.addActionListener(manipulador);
-}
+    public void Limpar(ActionListener manipulador){
+        jButtonLimpar.addActionListener(manipulador);
+    }
 }
