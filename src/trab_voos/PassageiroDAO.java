@@ -65,7 +65,6 @@ public class PassageiroDAO {
 }
     
    public void buscarBanco(ArrayList<BuscarP> lista){
-
        try {
            String sql="SELECT NOME,CODCOMPANHIA FROM PASSAGEIRO order by nome";
            Statement comando=conexaoBD.createStatement();
@@ -83,7 +82,7 @@ public class PassageiroDAO {
     
    
    public void lucroBanco(ArrayList<BuscaLucro> lista){
-   try{
+   try {
            String sql="SELECT NOME_COMPANHIA,LUCRO,DATAVOO FROM TB_LUCRO order by NOME_COMPANHIA";
            Statement comando=conexaoBD.createStatement();
            ResultSet resultado=comando.executeQuery(sql);
@@ -97,15 +96,11 @@ public class PassageiroDAO {
             }      
         } catch (Exception e) {
            System.out.println("Erro na BuscaLucro"+e);
-
        }
    
    
    }
    
-  
     }
   
 
-
-  
