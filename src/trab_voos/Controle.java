@@ -30,20 +30,16 @@ public class Controle {
     }
     public class Manipuladorlistar implements ActionListener{
 
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                ArrayList<BuscarP> lista = new ArrayList<BuscarP>();
-                gerenciadorDB.buscarBanco(lista);
-                Iterator<BuscarP> it=lista.iterator();
-                while(it.hasNext()){
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            ArrayList<BuscarP> lista = new ArrayList<BuscarP>();
+            gerenciadorDB.buscarBanco(lista);
+            Iterator<BuscarP> it=lista.iterator();
+            while(it.hasNext()){
                 BuscarP bp = (BuscarP) it.next();
                 janelaViewBuscar.inserirlista(bp);
-                
-                }
-                
             }
-          
-            
+        } 
     }
     
     public class MostraLucro implements ActionListener{
@@ -82,7 +78,7 @@ public class Controle {
         @Override
         public void actionPerformed(ActionEvent ae) {
             
-          janelaView.setVisible(true);
+          janelaView.executarViewInsere();
         }
     }
     
@@ -90,7 +86,7 @@ public class Controle {
 
         @Override
         public void actionPerformed(ActionEvent ae) {
-            janelaViewBuscar.setVisible(true);  
+            janelaViewBuscar.executarViewBusca();
         }
     }
     
@@ -98,53 +94,47 @@ public class Controle {
 
         @Override
         public void actionPerformed(ActionEvent ae) {
-            janelalucro.setVisible(true);
-              }
+            janelalucro.executarViewLucro();
+        }
     }
     
     
     
     public void executar(){
-    janelaInicial=new ViewInicialJFrame();  
-    janelalucro= new BuscaLucroJFrame();
-    janelaViewBuscar= new BuscarPVooJFrame();
-    janelaView = new ControleVooJFrame();
-    gerenciadorDB=new PassageiroDAO();
-    
-    //INSERIR BANCO
-    ManipuladorInsere m=new ManipuladorInsere();
-    janelaView.adicionaManipuladorEventosInsere(m);
-    //LISTAR BANCO
-    Manipuladorlistar ml =new Manipuladorlistar();
-    janelaViewBuscar.listar(ml);
-    //LIMPAR LISTA
-    ManipuladorLimpar limp=new ManipuladorLimpar();
-    janelaViewBuscar.Limpar(limp);
-    
-    
-     ManipuladorlLimpar llp=new ManipuladorlLimpar();
-    janelalucro.Limpar(llp);
-    
-    //--------------Lucro-------------------------------------
-    MostraLucro mlucro=new MostraLucro();
-    janelalucro.buttonBuscar(mlucro);
-    
-    //----------Abrir view Insere-----------------------------
-    abirInserir abrir=new abirInserir();
-    janelaInicial.abrirInserir(abrir);
-    //----------Abrir view Buscar-----------------------------
-    abrirBuscar buscar=new abrirBuscar();
-    janelaInicial.abrirBuscar(buscar);
-    //----------Abrir view Lucro-----------------------------
-    abrirLucro lucro=new abrirLucro();
-    janelaInicial.abrirLucro(lucro);
-    //--------------------------------------------------------
-   janelaInicial.setVisible(true);
-    
-    
-    
-    }
-   
-    
-    
-    }
+        janelaInicial=new ViewInicialJFrame();  
+        janelalucro= new BuscaLucroJFrame();
+        janelaViewBuscar= new BuscarPVooJFrame();
+        janelaView = new ControleVooJFrame();
+        gerenciadorDB=new PassageiroDAO();
+
+        //INSERIR BANCO
+        ManipuladorInsere m=new ManipuladorInsere();
+        janelaView.adicionaManipuladorEventosInsere(m);
+        //LISTAR BANCO
+        Manipuladorlistar ml =new Manipuladorlistar();
+        janelaViewBuscar.listar(ml);
+        //LIMPAR LISTA
+        ManipuladorLimpar limp=new ManipuladorLimpar();
+        janelaViewBuscar.Limpar(limp);
+
+
+         ManipuladorlLimpar llp=new ManipuladorlLimpar();
+        janelalucro.Limpar(llp);
+
+        //--------------Lucro-------------------------------------
+        MostraLucro mlucro=new MostraLucro();
+        janelalucro.buttonBuscar(mlucro);
+
+        //----------Abrir view Insere-----------------------------
+        abirInserir abrir=new abirInserir();
+        janelaInicial.abrirInserir(abrir);
+        //----------Abrir view Buscar-----------------------------
+        abrirBuscar buscar=new abrirBuscar();
+        janelaInicial.abrirBuscar(buscar);
+        //----------Abrir view Lucro-----------------------------
+        abrirLucro lucro=new abrirLucro();
+        janelaInicial.abrirLucro(lucro);
+        //--------------------------------------------------------
+        janelaInicial.executarPrincipal();
+    }   
+}
