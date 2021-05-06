@@ -28,9 +28,9 @@ public class PassageiroDAO {
         try {
             //ALTERAR DADOS PARA CONEXAO COM BANCO     
             String user="system";
-            String password="userdb";
+            String password="admin";
           
-            String url="jdbc:oracle:thin:@localhost:1521:XE";
+            String url="jdbc:oracle:thin:@localhost:1521:xe";
             conexaoBD = DriverManager.getConnection(url,user,password);
           
            
@@ -76,7 +76,7 @@ public class PassageiroDAO {
             lista.add(bp);
            }      
        } catch (Exception e) {
-      System.out.println("Erro na Busca"+e);
+            System.out.println("Erro na Busca"+e);
         }
     }
     
@@ -97,10 +97,8 @@ public class PassageiroDAO {
         } catch (Exception e) {
            System.out.println("Erro na BuscaLucro"+e);
        }
-   
-   
    }
    
-    }
+}
   
 
